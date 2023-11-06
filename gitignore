@@ -1,0 +1,19 @@
+node_modules/
+
+wp-content/*
+!wp-content/plugins/
+!wp-content/themes/
+
+# ignore everything in the root except the "wp-content" directory.
+/*
+!wp-content/
+wp-content/backups-dup-lite
+/.idea/
+# ignore all files starting with .
+.*
+
+# track this file .gitignore (i.e. do NOT ignore it)
+!.gitignore
+!.github
+# track .editorconfig file (i.e. do NOT ignore it)
+!.editorconfig

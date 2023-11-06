@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --select-border: #777;
+    --select-focus: rgb(0, 238, 255);
+    --select-arrow: var(--select-border);
+}
+
+.site-header {
+    background-color: #feb526;
+    color: white;
+    padding: 10px 0;
+}
+
+.site-main {
+    margin-bottom: 30px;
+}
+
+.site-header a,
+.site-header a:visited,
+.site-footer a,
+.site-footer a:visited {
+    color: white;
+}
+
+.site-footer {
+    padding: 20px 0;
+    background-color: rgb(59, 59, 59);
+    color: white;
+}
+
+._container {
+    max-width: 1350px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.event-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+
+.event-item {
+    border: 1px solid #feb526;
+    border-radius: 10px;
+    padding: 10px;
+}
+  
+.event-item__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.event-item__image {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.js-filter-block {
+    margin-bottom: 25px;
+}
+
+.js-filter-block__year, 
+.js-filter-block__mounth {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.js-filter-block__place {
+    margin-bottom: 30px;
+}
+
+.js-filter-block__form label {
+    position: relative;
+    padding-left: 20px; 
+}
+
+.check-box {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.check-style {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #0ea36e;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.check-box:checked + .check-style::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    background-color: #0ea36e;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.check-box:disabled + .check-style {
+    border-color: #ccc;
+}
+
+.check-box:checked:disabled + .check-style::before {
+    background-color: #ccc;
+}
+
+.check-box:focus + .check-style {
+    box-shadow: 0 0 0 2px #000;
+}
+
+.js-filter-button {
+    position: relative;
+    font-weight: 700;
+    background-color: rgb(61, 199, 224)!important;
+    color: white!important;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.js-filter-button:hover {
+    background-color: #0ea36e!important;
+}
+
+select {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.select {
+    width: 100%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid var(--select-border);
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+@media screen and (max-width: 1024px) {
+    .event-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .event-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
